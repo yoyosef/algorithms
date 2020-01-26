@@ -47,5 +47,13 @@ def randomized_select(array, p, r, i):
 
 if __name__ == '__main__':
     arr = [1, 5, 4, 3, 2, 9, -1]
-    print(sorted(arr))
+    sorted_arr = sorted(arr)
     print(randomized_select(arr, 0, len(arr) - 1, 3))
+    print(randomized_select(arr, 0, len(arr) - 1, 1))
+    print(randomized_select(arr, 0, len(arr) - 1, 5))
+    selected = []
+    for i in range(1, len(arr)+1):
+        selected.append(randomized_select(arr, 0, len(arr) - 1, i))
+
+    print(selected)
+    print(arr)
