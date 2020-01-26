@@ -26,9 +26,7 @@ def greedy_job_scheduling(intervals: List[Interval]):
     optimal_jobs = []
     num_jobs = 0
     for job in sorted_intervals:
-        if not optimal_jobs:
-            optimal_jobs.append(job)
-        elif optimal_jobs[num_jobs].do_not_intersect(job):
+        if optimal_jobs == [] or optimal_jobs[num_jobs - 1].do_not_intersect(job):
             optimal_jobs.append(job)
             num_jobs += 1
 
